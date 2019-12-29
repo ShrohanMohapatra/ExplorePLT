@@ -1,0 +1,6 @@
+P -> S
+S -> SpM
+S -> M
+M -> MsT
+M -> T
+T -> x
