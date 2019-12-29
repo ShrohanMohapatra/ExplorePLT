@@ -81,5 +81,5 @@ def earleyAlgorithm(filename,string):
 print(earleyAlgorithm('example3.txt','xpxsx'))
 def lexer_early(string):
     return earleyAlgorithm('lexerEarly.txt',string)
-def parser_early(string):
+def parser_early(filename,string):
     return earleyAlgorithm(filename,string)
