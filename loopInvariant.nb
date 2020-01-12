@@ -1,0 +1,278 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8961,        268]
+NotebookOptionsPosition[      8298,        247]
+NotebookOutlinePosition[      8657,        263]
+CellTagsIndexPosition[      8614,        260]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{
+   RowBox[{"Implies", "[", 
+    RowBox[{"I1", ",", 
+     RowBox[{
+      RowBox[{"D1", "[", "newr", "]"}], "\[GreaterEqual]", "0"}]}], "]"}], "&&", 
+   RowBox[{"Implies", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"newr", "\[NotEqual]", "0"}], "&&", "I1"}], ",", 
+     RowBox[{
+      RowBox[{"Implies", "[", 
+       RowBox[{
+        RowBox[{"newr", "\[LessEqual]", "1"}], ",", 
+        RowBox[{"Or", "[", 
+         RowBox[{
+          RowBox[{"Implies", "[", 
+           RowBox[{"flag", ",", 
+            RowBox[{
+             RowBox[{"Mod", "[", 
+              RowBox[{
+               RowBox[{"a", "*", "newt"}], ",", "n"}], "]"}], "\[Equal]", 
+             "1"}]}], "]"}], ",", 
+          RowBox[{"!", 
+           RowBox[{"(", "flag", ")"}]}]}], "]"}]}], "]"}], "&&", 
+      RowBox[{
+       RowBox[{"D1", "[", 
+        RowBox[{"r", "-", 
+         RowBox[{"q", "*", "newr"}]}], "]"}], "\[GreaterEqual]", 
+       RowBox[{"D1", "[", "newr", "]"}]}]}]}], "]"}], "&&", 
+   RowBox[{"Implies", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"newr", "\[Equal]", "0"}], "&&", "I1"}], ",", 
+     RowBox[{"Or", "[", 
+      RowBox[{
+       RowBox[{"Implies", "[", 
+        RowBox[{"flag", ",", 
+         RowBox[{
+          RowBox[{"Mod", "[", 
+           RowBox[{
+            RowBox[{"a", "*", "newt"}], ",", "n"}], "]"}], "\[Equal]", 
+          "1"}]}], "]"}], ",", 
+       RowBox[{"!", 
+        RowBox[{"(", "flag", ")"}]}]}], "]"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.786368338471813*^9, 3.786368343501635*^9}, {
+  3.786368659761466*^9, 3.7863687557169027`*^9}, {3.786368981432385*^9, 
+  3.786369115625472*^9}, {3.786369159059787*^9, 3.786369189866341*^9}, {
+  3.786369230701582*^9, 
+  3.7863692528402042`*^9}},ExpressionUUID->"47c222b7-b73e-46a7-bcb4-\
+05ee31281a23"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"!", "flag"}], "||", 
+    RowBox[{"!", "I1"}], "||", 
+    RowBox[{"newr", "\[NotEqual]", "0"}], "||", 
+    RowBox[{
+     RowBox[{"Mod", "[", 
+      RowBox[{
+       RowBox[{"a", " ", "newt"}], ",", "n"}], "]"}], "\[Equal]", "1"}]}], 
+   ")"}], "&&", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"!", "flag"}], "||", 
+    RowBox[{"!", "I1"}], "||", 
+    RowBox[{
+     RowBox[{"Mod", "[", 
+      RowBox[{
+       RowBox[{"a", " ", "newt"}], ",", "n"}], "]"}], "\[Equal]", "1"}], "||", 
+    RowBox[{"newr", ">", "1"}]}], ")"}], "&&", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"!", "I1"}], "||", 
+    RowBox[{"newr", "\[Equal]", "0"}], "||", 
+    RowBox[{
+     RowBox[{"D1", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "newr"}], " ", "q"}], "+", "r"}], "]"}], 
+     "\[GreaterEqual]", 
+     RowBox[{"D1", "[", "newr", "]"}]}]}], ")"}], "&&", 
+  RowBox[{"(", 
+   RowBox[{"I1", "\[Implies]", 
+    RowBox[{
+     RowBox[{"D1", "[", "newr", "]"}], "\[GreaterEqual]", "0"}]}], 
+   ")"}]}]], "Output",
+ CellChangeTimes->{
+  3.7863692648838*^9},ExpressionUUID->"6f6cae54-d307-470d-91a0-503ce18ba4b9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"BooleanConvert", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Implies", "[", 
+     RowBox[{"I1", ",", 
+      RowBox[{
+       RowBox[{"D1", "[", "newr", "]"}], "\[GreaterEqual]", "0"}]}], "]"}], "&&", 
+    RowBox[{"Implies", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"newr", "\[NotEqual]", "0"}], "&&", "I1"}], ",", 
+      RowBox[{
+       RowBox[{"Implies", "[", 
+        RowBox[{
+         RowBox[{"newr", "\[LessEqual]", "1"}], ",", 
+         RowBox[{"Or", "[", 
+          RowBox[{
+           RowBox[{"Implies", "[", 
+            RowBox[{"flag", ",", 
+             RowBox[{
+              RowBox[{"Mod", "[", 
+               RowBox[{
+                RowBox[{"a", "*", "newt"}], ",", "n"}], "]"}], "\[Equal]", 
+              "1"}]}], "]"}], ",", 
+           RowBox[{"!", 
+            RowBox[{"(", "flag", ")"}]}]}], "]"}]}], "]"}], "&&", 
+       RowBox[{
+        RowBox[{"D1", "[", 
+         RowBox[{"r", "-", 
+          RowBox[{"q", "*", "newr"}]}], "]"}], "\[GreaterEqual]", 
+        RowBox[{"D1", "[", "newr", "]"}]}]}]}], "]"}], "&&", 
+    RowBox[{"Implies", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"newr", "\[Equal]", "0"}], "&&", "I1"}], ",", 
+      RowBox[{"Or", "[", 
+       RowBox[{
+        RowBox[{"Implies", "[", 
+         RowBox[{"flag", ",", 
+          RowBox[{
+           RowBox[{"Mod", "[", 
+            RowBox[{
+             RowBox[{"a", "*", "newt"}], ",", "n"}], "]"}], "\[Equal]", 
+           "1"}]}], "]"}], ",", 
+        RowBox[{"!", 
+         RowBox[{"(", "flag", ")"}]}]}], "]"}]}], "]"}]}], ",", 
+   "\"\<IMPLIES\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.78636933042375*^9, 3.786369334362699*^9}, {
+  3.786369368791197*^9, 3.7863693733962183`*^9}, {3.7863694151869183`*^9, 
+  3.7863694392913*^9}},ExpressionUUID->"fab5ce0a-7edb-4e6c-8326-99345aa87ade"],
+
+Cell[BoxData[
+ RowBox[{"I1", "\[Implies]", 
+  RowBox[{"!", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"D1", "[", "newr", "]"}], "\[GreaterEqual]", "0"}], 
+     "\[Implies]", 
+     RowBox[{"!", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"newr", "\[Equal]", "0"}], "\[Implies]", 
+          RowBox[{"!", 
+           RowBox[{"(", 
+            RowBox[{"flag", "\[Implies]", 
+             RowBox[{
+              RowBox[{"Mod", "[", 
+               RowBox[{
+                RowBox[{"a", " ", "newt"}], ",", "n"}], "]"}], "\[Equal]", 
+              "1"}]}], ")"}]}]}], ")"}], "\[Implies]", 
+        RowBox[{"!", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"newr", "\[NotEqual]", "0"}], "\[Implies]", 
+           RowBox[{"!", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"newr", "\[LessEqual]", "1"}], "\[Implies]", 
+                RowBox[{"!", 
+                 RowBox[{"(", 
+                  RowBox[{
+                   RowBox[{"(", 
+                    RowBox[{"flag", "\[Implies]", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"Mod", "[", 
+                    RowBox[{
+                    RowBox[{"a", " ", "newt"}], ",", "n"}], "]"}], "\[Equal]",
+                     "1"}], "\[Implies]", 
+                    RowBox[{
+                    RowBox[{"D1", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "newr"}], " ", "q"}], "+", "r"}], "]"}], "<", 
+                    RowBox[{"D1", "[", "newr", "]"}]}]}], ")"}]}], ")"}], 
+                   "\[Implies]", 
+                   RowBox[{"!", 
+                    RowBox[{"(", 
+                    RowBox[{
+                    RowBox[{"!", "flag"}], "\[Implies]", 
+                    RowBox[{
+                    RowBox[{"D1", "[", 
+                    RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "newr"}], " ", "q"}], "+", "r"}], "]"}], "<", 
+                    RowBox[{"D1", "[", "newr", "]"}]}]}], ")"}]}]}], 
+                  ")"}]}]}], ")"}], "\[Implies]", 
+              RowBox[{"!", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"newr", ">", "1"}], "\[Implies]", 
+                 RowBox[{
+                  RowBox[{"D1", "[", 
+                   RowBox[{
+                    RowBox[{
+                    RowBox[{"-", "newr"}], " ", "q"}], "+", "r"}], "]"}], "<", 
+                  RowBox[{"D1", "[", "newr", "]"}]}]}], ")"}]}]}], ")"}]}]}], 
+          ")"}]}]}], ")"}]}]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{3.7863693348702507`*^9, 3.786369374469891*^9, 
+  3.78636943974051*^9},ExpressionUUID->"1d00131e-31ea-415f-8152-98f89724f3d3"]
+}, Open  ]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1834, 51, 94, "Input",ExpressionUUID->"47c222b7-b73e-46a7-bcb4-05ee31281a23"],
+Cell[2417, 75, 1159, 38, 56, "Output",ExpressionUUID->"6f6cae54-d307-470d-91a0-503ce18ba4b9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3613, 118, 1818, 50, 94, "Input",ExpressionUUID->"fab5ce0a-7edb-4e6c-8326-99345aa87ade"],
+Cell[5434, 170, 2848, 74, 77, "Output",ExpressionUUID->"1d00131e-31ea-415f-8152-98f89724f3d3"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
