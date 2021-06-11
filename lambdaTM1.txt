@@ -1,0 +1,34 @@
+(* 
+
+The lambda-calculus form of the solution to the computability of the language L = {a^n b^n|n>=0} ....
+
+*)
+
+(* We begin with the definition of the church numerals *)
+
+0 := lambda f. lambda x. x
+1 := lambda f. lambda x. f x
+2 := lambda f. lambda x. f f x
+3 := lambda f. lambda x. f f f x
+4 := lambda f. lambda x. f f f f x
+
+m := lambda f. lambda x. f^m x
+
+SUCC := lambda m. lambda f. lambda x. f(m f x)
+PLUS := lambda m. lambda n. lambda f. lambda x. m f n f x
+MULT := lambda m. lambda n. lambda f. lambda x. m n f x
+TRUE := lambda a. lambda b. a
+FALSE := lambda a. lambda b. b
+AND := lambda p. lambda q. p q p
+OR := lambda p. lambda q. p p q
+NOT := lambda p. p FALSE TRUE
+ISZERO := lambda n. n (lambda x. FALSE) TRUE
+PRED := lambda n. n (lambda g. lambda k. ISZERO(g 1) k (PLUS(g k) 1)) (lambda v.0) 0
+SUB := lambda m. lambda n. n PRED m
+
+a := lambda f. lambda x. x
+b := lambda f. lambda x. f x
+M[x] := [a,a,a,b,b,b]
+RUNNER := lambda g. lambda k. lambda n. IFTHENELSE ISZERO(SUB(SUB(n MULT(2 k)) 1)) TRUE AND 
+                                        AND g(k+1 n) ISZERO(SUB(M[k] a)) ISZERO(SUB(M[PRED(SUB(n k) 1)] b))
+(Y RUNNER) TRUE 6
