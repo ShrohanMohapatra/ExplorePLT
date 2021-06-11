@@ -26,9 +26,25 @@ ISZERO := lambda n. n (lambda x. FALSE) TRUE
 PRED := lambda n. n (lambda g. lambda k. ISZERO(g 1) k (PLUS(g k) 1)) (lambda v.0) 0
 SUB := lambda m. lambda n. n PRED m
 
+(* Y combinator *)
+
+Y = lambda g. (lambda x. g(x x))(lambda x. g(x x))
+
 a := lambda f. lambda x. x
 b := lambda f. lambda x. f x
-M[x] := [a,a,a,b,b,b]
-RUNNER := lambda g. lambda k. lambda n. IFTHENELSE ISZERO(SUB(SUB(n MULT(2 k)) 1)) TRUE AND 
-                                        AND g(k+1 n) ISZERO(SUB(M[k] a)) ISZERO(SUB(M[PRED(SUB(n k) 1)] b))
-(Y RUNNER) TRUE 6
+
+(* Solving for a specific case *)
+
+M[x] := [a,a,a,b,b,b] (* I am going to use the map operators for arrays and sequences .......*)
+RUNNER := lambda g. lambda [k,n]. IFTHENELSE ISZERO(SUB(SUB(n MULT(2 k)) 1)) TRUE AND 
+                                        AND g[k+1,n] ISZERO(SUB(M[k] a)) ISZERO(SUB(M[PRED(SUB(n k) 1)] b))
+(Y RUNNER) [0,6]
+
+(* Solving for a generic case *)
+
+RECURSOR1 := lambda g1. lambda [k,M]. IFTHENELSE ISZERO(M[k]) 0 g1([k+1,M])+1
+LENGTH := lambda M. (Y RECURSOR1) [0,M]
+RUNNER1 := lambda g. lambda [k,M]. IFTHENELSE ISZERO(SUB(SUB(LENGTH(M) MULT(2 k)) 1)) TRUE AND 
+                                        AND g[k+1,LENGTH(M)] ISZERO(SUB(M[k] a)) ISZERO(SUB(M[PRED(SUB(LENGTH(M) k) 1)] b))
+ACCEPT := lambda M. (Y RUNNER1) [0,M]
+ACCEPT M
