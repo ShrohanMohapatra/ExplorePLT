@@ -12,3 +12,7 @@ assert turingMachine('aaabbb')==True
 assert turingMachine('aaabb')==False
 assert turingMachine('aabbb')==False
 assert turingMachine('')==True
+assert turingMachine('ab')==True
+assert turingMachine('aabb')==True
+assert turingMachine('aaaabbbb')==True
+assert turingMachine('aaaaabbbbb')==True
