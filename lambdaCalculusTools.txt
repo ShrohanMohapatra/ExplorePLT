@@ -1,0 +1,24 @@
+0 := lambda f. lambda x. x
+1 := lambda f. lambda x. f x
+2 := lambda f. lambda x. f f x
+3 := lambda f. lambda x. f f f x
+4 := lambda f. lambda x. f f f f x
+5 := lambda f. lambda x. f f f f f x
+### .... Similarly ->
+m := lambda f. lambda x. f^m x
+SUCC := lambda m. lambda f. lambda x. f (m f x)
+PLUS := lambda m, n, f, x. m f n f x
+MULT := lambda m, n, f, x. m n f x
+TRUE := lambda x, y. x
+FALSE := lambda x, y. y
+EXP := lambda m, n. m (MULT n) 1
+AND := lambda p, q. p q p
+OR := lambda p, q. p p q
+NOT := lambda p, q. p FALSE TRUE
+ISZERO := lambda n. n (lambda x. FALSE) TRUE 
+PRED := lambda n. n (lambda g. lambda k. ISZERO(g 1) k(PLUS(g k) 1)) (lambda v. 0) 0
+IFTHENELSE := lambda p, a, b. p a b
+NEGCHECK := lambda m, n. IFTHENELSE ISZERO PLUS m n m FALSE
+SUB := lambda m, n. PLUS m NEGCHECK -n n
+PRED1 := lambda m. SUB m 1
+Y := lambda g. (lambda x.g(x x))(lambda x. g(x x))
