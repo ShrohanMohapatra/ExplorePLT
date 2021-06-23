@@ -22,3 +22,14 @@ NEGCHECK := lambda m, n. IFTHENELSE ISZERO PLUS m n m FALSE
 SUB := lambda m, n. PLUS m NEGCHECK -n n
 PRED1 := lambda m. SUB m 1
 Y := lambda g. (lambda x.g(x x))(lambda x. g(x x))
+### .... Construction of a register here ....CLOCK_ITER :=  lambda x. IFTHENELSE x FALSE TRUE
+CLOCK := (Y CLOCK_ITER) 0
+Q1SRNAND :=  lambda Qp, R, S. IFTHENELSE AND R S Qp NOT S
+Q2SRNAND :=  lambda Qp, R, S. IFTHENELSE AND R S Qp NOT R
+QDFLIP := lambda C, D. Q1SRNANA OR NOT C D NOT AND C D
+TUPLE_GEN := lambda M1,M2,M3,...,Mn,z. z M1 M2 M3 ... Mn
+REG_1 := QDFLIP CLOCK TUPLE_GEN 0100101000111001
+NIL := lambda x, y. y
+FOREST := lambda f. IFTHENELSE ISZERO SUB f NIL NIL f
+ITER_FIND := lambda f, x. IFTHENELSE ISZERO SUB x['parent'] x x x['parent'] = ITER_FIND(x['parent'])
+FIND := lambda x. (Y ITER_FIND) x MAKE_SET := lambda x, f. IFTHENELSE FIND x f TUPLE_GEN x 'parent'->x 'rank'->0 
