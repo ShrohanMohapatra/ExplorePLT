@@ -31,4 +31,20 @@ fileWriter.write('NEGCHECK := lambda m, n. IFTHENELSE ISZERO PLUS m n m FALSE\n'
 fileWriter.write('SUB := lambda m, n. PLUS m NEGCHECK -n n\n')
 fileWriter.write('PRED1 := lambda m. SUB m 1\n')
 fileWriter.write('Y := lambda g. (lambda x.g(x x))(lambda x. g(x x))\n')
+fileWriter.write('### .... Construction of a register here ....')
+fileWriter.write('CLOCK_ITER :=  lambda x. IFTHENELSE x FALSE TRUE\n')
+fileWriter.write('CLOCK := (Y CLOCK_ITER) 0\n')
+fileWriter.write('Q1SRNAND :=  lambda Qp, R, S. IFTHENELSE AND R S Qp NOT S\n')
+fileWriter.write('Q2SRNAND :=  lambda Qp, R, S. IFTHENELSE AND R S Qp NOT R\n')
+fileWriter.write('QDFLIP := lambda C, D. Q1SRNANA OR NOT C D NOT AND C D\n')
+fileWriter.write('TUPLE_GEN := lambda M1,M2,M3,...,Mn,z. z M1 M2 M3 ... Mn\n')
+fileWriter.write('REG_1 := QDFLIP CLOCK TUPLE_GEN 0100101000111001\n')
+fileWriter.write('NIL := lambda x, y. y\n')
+fileWriter.write('FOREST := lambda f. IFTHENELSE ISZERO SUB f NIL NIL f\n')
+fileWriter.write('ITER_FIND := lambda x, f. IFTHENELSE ISZERO SUB x[\'parent\'] x x x[\'parent\'] = ITER_FIND(x[\'parent\'])\n')
+fileWriter.write('MAKE_SET := lambda x, f. \n')
 fileWriter.close()
+
+
+
+
