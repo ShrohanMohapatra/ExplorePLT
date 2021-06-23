@@ -41,10 +41,9 @@ fileWriter.write('TUPLE_GEN := lambda M1,M2,M3,...,Mn,z. z M1 M2 M3 ... Mn\n')
 fileWriter.write('REG_1 := QDFLIP CLOCK TUPLE_GEN 0100101000111001\n')
 fileWriter.write('NIL := lambda x, y. y\n')
 fileWriter.write('FOREST := lambda f. IFTHENELSE ISZERO SUB f NIL NIL f\n')
-fileWriter.write('ITER_FIND := lambda x, f. IFTHENELSE ISZERO SUB x[\'parent\'] x x x[\'parent\'] = ITER_FIND(x[\'parent\'])\n')
-fileWriter.write('MAKE_SET := lambda x, f. \n')
+fileWriter.write('ITER_FIND := lambda f, x. IFTHENELSE ISZERO SUB x[\'parent\'] x x x[\'parent\'] = ITER_FIND(x[\'parent\'])\n')
+fileWriter.write('FIND := lambda x. (Y ITER_FIND) x ')
+fileWriter.write('MAKE_SET := lambda x, f. IFTHENELSE FIND x f TUPLE_GEN x \'parent\'->x \'rank\'->0 \n')
 fileWriter.close()
-
-
-
-
+# How to do assignment or a memory transfer remains
+# Then I can update how to do the union in the union-find data structure
